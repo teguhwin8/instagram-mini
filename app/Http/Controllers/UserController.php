@@ -23,10 +23,18 @@ class UserController extends Controller
             'bio' => 'max:144'
         ]);
 
+        $imageName = $user->avatar;
+        if ($request->avatar) {
+            $avatar_img = $request->avatar;
+            $imageName = $user->username . '.' . $avatar_img->extension();
+            $avatar_img->move(public_path('images/avatar'), $imageName);
+        }
+
         $user->update([
             'username' => $request->username,
             'fullname' => $request->fullname,
             'bio' => $request->bio,
+            'avatar' => $imageName,
         ]);
 
         return view('home', compact('user'));

@@ -6,10 +6,11 @@
         <div class="card">
           <div class="card-header">{{ __('Register') }}</div>
           <div class="card-body">
-            <form method="POST" action="/user/update">
+            <form method="POST" action="/user/edit">
               @csrf
-              <x-input name="username" label="Username" disabled="false" :data="$user" />
-              <x-input name="email" label="Alamat Email" type="email" disabled :data="$user" />
+              @method('PUT')
+              <x-input name="username" label="Username" :data="$user" />
+              <x-input name="email" label="Alamat Email" type="email" :data="$user" />
               <x-input name="fullname" label="Nama Lengkap" />
               <x-input name="bio" label="Bio" />
               <div class="form-group row mb-0">

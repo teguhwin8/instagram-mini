@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<x-top-bar />
+<h1>Shop Page</h1>
 @endsection

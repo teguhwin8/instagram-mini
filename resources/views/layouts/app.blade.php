@@ -24,7 +24,6 @@
 <body class="bg-gray-100">
 	<div id="app">
 		<div class="container mx-auto max-w-sm bg-white">
-			<x-top-bar />
 			<div class="bg-white py-16 min-h-screen">
 				@yield('content')
 			</div>

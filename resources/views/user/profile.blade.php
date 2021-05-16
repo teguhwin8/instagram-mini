@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<x-top-bar />
+<h1>Halaman profil</h1>
 @endsection

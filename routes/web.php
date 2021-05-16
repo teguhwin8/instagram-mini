@@ -18,5 +18,10 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 
-Route::get('user/edit', 'UserController@edit');
-Route::put('user/edit', 'UserController@update');
+Route::get('/search', 'HomeController@search');
+Route::get('/upload', 'HomeController@upload');
+Route::get('/shop', 'HomeController@shop');
+Route::get('/notification', 'HomeController@notification');
+Route::get('/message', 'HomeController@message');
+
+Route::get('/{username}', 'UserController@show');

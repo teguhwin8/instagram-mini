@@ -16,10 +16,10 @@
     <form method="POST" action="{{ route('login') }}">
       @csrf
       <div>
-        <input type="text" class="general-input mt-3" placeholder="Nama pengguna atau email" name="username" value="{{ old('username') }}">
-        @if ($errors->has('username'))
+        <input type="text" class="general-input mt-3" placeholder="Nama pengguna atau email" name="email" value="{{ old('email') }}">
+        @if ($errors->has('email'))
         <span class="text-sm text-red-600">
-          {{ $errors->first('username') }}
+          {{ $errors->first('email') }}
         </span>
         @endif
       </div>
@@ -34,7 +34,7 @@
       <div class="text-right my-5">
         <a href="#" class="text-blue-500 hover:text-blue-600">Lupa kata sandi?</a>
       </div>
-      <button class="btn-block mt-3">LOGIN</button>
+      <button type="submit" class="btn-block mt-3">LOGIN</button>
       <div class="text-center mt-5">
         <span class="text-gray-400 mr-1">Tidak punya akun?</span>
         <a href="/register" class="text-blue-500 hover:text-blue-600">Buat akun</a>

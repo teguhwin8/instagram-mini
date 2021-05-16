@@ -28,7 +28,7 @@
 			<div class="bg-white py-16 min-h-screen">
 				@yield('content')
 			</div>
-			<x-navbar-bottom />
+			<x-navbar-bottom :data="$user" />
 		</div>
 	</div>
 </body>

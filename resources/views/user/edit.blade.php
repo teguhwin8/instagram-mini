@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+  <style>
+    img {
+      object-fit: cover;
+    }
+  </style>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -18,7 +23,9 @@
                 <div class="col-md-6">
                   <input type="file" name="avatar" id="avatar">
                   @if ($user->avatar)
-                    <img src="{{ asset('images/avatar/' . $user->avatar) }}" alt="{{ $user->username }}" class="w-100 mt-3 rounded-lg">
+                    <img src="{{ asset('images/avatar/' . $user->avatar) }}" alt="{{ $user->username }}" class="mt-3 rounded-circle" width="128" height="128">
+                  @else
+                    <img src="{{ 'https://ui-avatars.com/api/?size=128&name=' . $user->username }}" alt="{{ $user->username }}" class="mt-3 rounded-circle" width="128" height="128">
                   @endif
                 </div>
               </div>

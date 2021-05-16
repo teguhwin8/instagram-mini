@@ -1,6 +1,6 @@
 @extends('layouts.login')
 @section('content')
-<div class="bg-white p-12">
+<div class="bg-white p-10">
   <img src="{{ asset('image/instagram_logo.svg') }}" alt="Instagram Logo" class="w-3/4 mx-auto py-8">
   <div class="text-center">
     <button class="rounded w-full block bg-blue-500 hover:bg-blue-600 py-2 px-6 text-white font-medium">
@@ -24,7 +24,7 @@
         @endif
       </div>
       <div>
-        <input type="text" class="general-input mt-3" placeholder="Kata sandi" name="password" value="{{ old('password') }}">
+        <input type="password" class="general-input mt-3" placeholder="Kata sandi" name="password" value="{{ old('password') }}">
         @if ($errors->has('password'))
         <span class="text-sm text-red-600">
           {{ $errors->first('password') }}
@@ -37,7 +37,7 @@
       <button class="btn-block mt-3">LOGIN</button>
       <div class="text-center mt-5">
         <span class="text-gray-400 mr-1">Tidak punya akun?</span>
-        <a href="#" class="text-blue-500 hover:text-blue-600">Buat akun</a>
+        <a href="/register" class="text-blue-500 hover:text-blue-600">Buat akun</a>
       </div>
     </form>
   </div>
